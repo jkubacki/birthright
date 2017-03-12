@@ -1,9 +1,16 @@
 import React from 'react'
+import Actions from '../actions/panel'
 
 export default class Panel extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this._toggle = this._toggle.bind(this);
+  }
+
   _toggle() {
-    console.log("clicked");
+    let dispatch = this.props.dispatch;
+    Actions.toggle(dispatch);
   }
 
   render() {

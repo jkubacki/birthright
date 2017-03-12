@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Panel clicked={this.props.panel.clicked} />
+        <Panel clicked={this.props.panel.clicked} dispatch={this.props.dispatch} />
         <Board />
       </div>
     )
