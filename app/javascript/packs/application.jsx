@@ -9,8 +9,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/app'
+import { createStore } from 'redux';
+import reducer from './reducers/reducer';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const store = createStore(reducer)
   const node = <App store={store} />
   ReactDOM.render(
     node,
