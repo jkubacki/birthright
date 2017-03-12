@@ -33,7 +33,7 @@ const config = {
         loader: 'babel-loader',
         options: {
           presets: [
-            'react',
+            'react', 'es2015', 'stage-2', 'stage-0',
             ['env', { modules: false }]
           ]
         }
