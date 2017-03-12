@@ -8,11 +8,12 @@
 // layout file, like app/views/layouts/application.html.erb
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Board from './components/board'
+import App from './components/app'
 
 document.addEventListener('DOMContentLoaded', () => {
+  const node = <App store={store} />
   ReactDOM.render(
-    <Board />,
+    node,
     document.body.appendChild(document.createElement('div')),
   )
 })
