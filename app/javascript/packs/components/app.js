@@ -1,13 +1,15 @@
 import React from 'react'
 import Board from './board'
+import Panel from './panel'
 import { Provider } from 'react-redux';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Provider store={this.props.store}>
+      <div>
+        <Panel />
         <Board />
-      </Provider>
+      </div>
     )
   }
 }
