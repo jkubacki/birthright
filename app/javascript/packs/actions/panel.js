@@ -1,8 +1,9 @@
+import Constants from "../constants"
 const Actions = {};
 
 Actions.toggle = (dispatch) => {
   dispatch({
-    type: "toggle"
+    type: Constants.PANEL_TOGGLE
   })
 }
 
