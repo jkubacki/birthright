@@ -1,5 +1,5 @@
 const initialState = {
-  clicked: false
+  clicked: "not"
 };
 
 export default function reducer(state = initialState, action = {}) {

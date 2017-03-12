@@ -5,7 +5,7 @@ export default class Panel extends React.Component {
   render() {
     return (
       <div className="Panel">
-        Hello Panel
+        Panel {this.props.clicked} clicked
       </div>
     );
   }

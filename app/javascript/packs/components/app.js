@@ -1,15 +1,21 @@
 import React from 'react'
 import Board from './board'
 import Panel from './panel'
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux'
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
-        <Panel />
+        <Panel clicked={this.props.panel.clicked} />
         <Board />
       </div>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  panel: state.panel
+});
+
+export default connect(mapStateToProps)(App);
