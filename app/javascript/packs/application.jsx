@@ -9,22 +9,36 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { HexGrid } from 'react-hexgrid';
 
-const Hello = props => (
-  <div>Hello {props.name}!</div>
-)
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    let boardConfig = {
+      width: 800, height: 800,
+      layout: { width: 5, height: 5, flat: true, spacing: 1.1 },
+      origin: { x: 0, y: 0 },
+      map: 'hexagon',
+      mapProps: [ 4 ]
+    }
+    let grid = HexGrid.generate(boardConfig);
+    this.state = { grid, config: boardConfig };
+  }
 
-Hello.defaultProps = {
-  name: 'David'
-}
+  render() {
+    let { grid, config } = this.state;
 
-Hello.propTypes = {
-  name: React.PropTypes.string
+    return (
+      <div className="App">
+        <HexGrid width={config.width} height={config.height} hexagons={grid.hexagons} layout={grid.layout} />
+      </div>
+    );
+  }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Hello name="React" />,
+    <App />,
     document.body.appendChild(document.createElement('div')),
   )
 })
