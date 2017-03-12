@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import createLogger from 'redux-logger';
-import reducer from './reducers/reducer';
+import reducers from './reducers';
 
 const loggerMiddleware = createLogger({
   level: 'info',
@@ -8,5 +8,5 @@ const loggerMiddleware = createLogger({
 });
 
 export default function configureStore() {
-  return createStore(reducer, applyMiddleware(loggerMiddleware));
+  return createStore(reducers, applyMiddleware(loggerMiddleware));
 }

@@ -1,4 +1,5 @@
 const initialState = {
+  clicked: false
 };
 
 export default function reducer(state = initialState, action = {}) {
